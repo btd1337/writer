@@ -44,21 +44,39 @@ namespace Writer.Widgets {
                 lock_aspect_item.add (lock_aspect_check);
                 
             var align_item = new ToolItem ();
-                align_button = new ModeButton ();
-                    align_button.append (new Gtk.Button.from_icon_name ("format-justify-left-symbolic", Gtk.IconSize.BUTTON));
-                    align_button.append (new Gtk.Button.from_icon_name ("format-justify-center-symbolic", Gtk.IconSize.BUTTON));
-                    align_button.append (new Gtk.Button.from_icon_name ("format-justify-right-symbolic", Gtk.IconSize.BUTTON));
-                align_item.add (align_button);
+            align_button = new ModeButton ();
+            var align_left = new Gtk.Image.from_icon_name ("format-justify-left-symbolic", Gtk.IconSize.BUTTON);
+            align_left.tooltip_text = _("Align left");
+            var align_center = new Gtk.Image.from_icon_name ("format-justify-center-symbolic", Gtk.IconSize.BUTTON);
+            align_center.tooltip_text = _("Align center");
+            var align_right = new Gtk.Image.from_icon_name ("format-justify-right-symbolic", Gtk.IconSize.BUTTON);
+            align_right.tooltip_text = _("Align right");
+            align_button.append (align_left);
+            align_button.append (align_center);
+            align_button.append (align_right);
+            align_item.add (align_button);
                 
             var edit_image_button = new Gtk.Button.with_label ("Crop");
+            edit_image_button.tooltip_text = _("Crop the selected image");
             var edit_image_item = new Gtk.ToolItem ();
                 edit_image_item.add (edit_image_button);
 
-            var delete_image_button = new Gtk.Button.with_label ("Delete Image");
+            var delete_image_button = new Gtk.Button.with_label ("Remove Image");
+            delete_image_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            delete_image_button.tooltip_text = _("Remove the selected image");
             var delete_image_item = new Gtk.ToolItem ();
                 delete_image_item.add (delete_image_button);
             
+
+            //Set border_width on ToolItems
+            wrap_item.border_width = 5;
+            lock_aspect_item.border_width = 5;
+            align_item.border_width = 5;
+            edit_image_item.border_width = 5;
+            align_item.border_width = 5;
+            delete_image_item.border_width = 5;
             
+            // Add Widgets            
             this.add (wrap_item);
             this.add (lock_aspect_item);
             this.add (align_item);
