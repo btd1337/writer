@@ -47,10 +47,6 @@ namespace Writer.Widgets {
             font_button.tooltip_text = _("Font");
             font_button.use_font = false;
             font_button.use_size = true;
-            font_button.font_set.connect (() => {
-                unowned string name = font_button.get_font_name ();
-                stdout.printf ("Selected font: %s\n", name);
-            });
             font_item.add (font_button);
 
             var font_color_button = new Gtk.ColorButton ();
@@ -132,6 +128,15 @@ namespace Writer.Widgets {
             
             align_button.mode_changed.connect (() => {
                 change_align (align_button.selected);
+            });
+            
+            font_button.font_set.connect (() => {
+                editor.set_font_from_string (font_button.get_font_name ());
+            });
+            font_color_button.color_set.connect (() => {
+                Gdk.Color color;
+                font_color_button.get_color (out color);
+                editor.set_font_color (color);
             });
             
             bold_button.button_press_event.connect ((event) => {
