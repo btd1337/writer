@@ -18,7 +18,7 @@
   <developer_name>Ryo Nakano</developer_name>
   <url type="homepage">https://github.com/ryonakano/writer</url>
   <url type="bugtracker">https://github.com/ryonakano/writer/issues</url>
-  <url type="translate">https://github.com/ryonakano/writer/blob/master/po/README.md</url>
+  <url type="translate">https://github.com/ryonakano/writer/blob/master/CONTRIBUTING.md#how-to-translate-this-app</url>
   
   <custom>
     <value key="x-appcenter-color-primary">#50a4f4</value>
