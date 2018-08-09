@@ -45,7 +45,7 @@ namespace Writer.Widgets {
             var font_item = new ToolItem ();
             font_button = new Gtk.FontButton ();
             font_button.tooltip_text = _("Font");
-            font_button.use_font = true;
+            font_button.use_font = false;
             font_button.use_size = true;
             font_button.font_set.connect (() => {
                 unowned string name = font_button.get_font_name ();
