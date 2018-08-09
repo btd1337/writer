@@ -32,7 +32,7 @@ namespace Writer {
         private TextEditor editor;
         
         construct {
-            application_id = "net.launchpad.writer";
+            application_id = "com.github.ryonakano.writer";
         }
         
         public WriterApp () {

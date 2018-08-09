@@ -24,11 +24,11 @@ cd build/
 ninja
 ```
 
-To install, use `ninja install`, then execute with `writer`
+To install, use `ninja install`, then execute with `com.github.ryonakano.writer`
 
 ```
 sudo ninja install
-writer
+com.github.ryonakano.writer
 ```
 
 ## Contributing
