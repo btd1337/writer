@@ -46,9 +46,13 @@ namespace Writer.Widgets {
 
             //Make buttons
             open_button = new Gtk.Button.from_icon_name ("document-open", Gtk.IconSize.LARGE_TOOLBAR);
+            open_button.tooltip_text = _("Open a file");
             save_button = new Gtk.Button.from_icon_name ("document-save", Gtk.IconSize.LARGE_TOOLBAR);
+            save_button.tooltip_text = _("Save this file");
             revert_button = new Gtk.Button.from_icon_name ("document-revert", Gtk.IconSize.LARGE_TOOLBAR);
+            revert_button.tooltip_text = _("Restore this file");
             print_button = new Gtk.Button.from_icon_name ("document-export", Gtk.IconSize.LARGE_TOOLBAR);
+            print_button.tooltip_text = _("Print…");
 
             //Search Field
             search_field = new Gtk.SearchEntry ();
