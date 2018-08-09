@@ -34,7 +34,6 @@ namespace Writer.Widgets {
         private Button save_as_button;
         private Button revert_button;
         private Button print_button;
-        private Gtk.MenuItem save_as_item;
         private Gtk.SearchEntry search_field;
 
         public TitleBar (WriterApp app) {
@@ -97,7 +96,7 @@ namespace Writer.Widgets {
             print_button.sensitive = active;
             search_field.sensitive = active;
 
-            save_as_item.sensitive = active;
+            save_as_button.sensitive = active;
         }
     }
 }
