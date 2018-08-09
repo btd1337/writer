@@ -4,6 +4,8 @@
 
 Writer is a word processor for elementary OS that let you create simple and beautiful documents.
 
+![Writter Screenshot](data/Screenshot.png)
+
 ## Building, Testing, and Installation
 
 You'll need the following dependencies to build:
