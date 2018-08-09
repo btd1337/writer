@@ -72,7 +72,7 @@ namespace Writer {
             registry.register_data_source.begin (ds, null, (obj, res) => {
                 try {
                     registry.register_data_source.end (res);
-                } catch (GLib.Error reg_err) {
+                } catch (Error reg_err) {
                     warning ("%s", reg_err.message);
                 }
             });

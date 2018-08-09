@@ -24,11 +24,11 @@ namespace Writer.Utils {
         
         public string uri;
         public string path;
-        public GLib.File file;
+        public File file;
     
         public Document (string uri) {
             this.uri = uri;
-            this.file = GLib.File.new_for_uri (uri);
+            this.file = File.new_for_uri (uri);
             this.path = file.get_path ();
         }
         

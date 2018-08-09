@@ -34,7 +34,7 @@ namespace Writer.Utils {
         else
             filech.add_button (Gtk.Stock.SAVE, Gtk.ResponseType.ACCEPT);
         filech.set_default_response (Gtk.ResponseType.ACCEPT);
-        filech.set_current_folder_uri (Utils.last_path ?? GLib.Environment.get_home_dir ());
+        filech.set_current_folder_uri (Utils.last_path ?? Environment.get_home_dir ());
         filech.key_press_event.connect ((ev) => {
             if (ev.keyval == 65307) // Esc key
                 filech.destroy ();

@@ -24,7 +24,7 @@ namespace Writer.Utils {
 
     public class ExportDialog : Gtk.FileChooserDialog {
 
-        GLib.HashTable<string, string> files;
+        HashTable<string, string> files;
         string current_ext = "";
 
         const string DEFAULT = "text/rtf";
@@ -35,7 +35,7 @@ namespace Writer.Utils {
         public ExportDialog.export_document (List<Note> notes, string title, Gtk.Window window) {
             string[] bins = {"pdf"};
 
-            files = new GLib.HashTable<string, string> (str_hash, str_equal);
+            files = new HashTable<string, string> (str_hash, str_equal);
             files["text/rtf"] = "Rich Text Format (.rtf)";
             files["application/pdf"] = "Portable Document Format (.pdf)";
             build ();
@@ -57,7 +57,7 @@ namespace Writer.Utils {
                     string ext = current_ext[1:current_ext.length];
 
                     var output = File.new_for_path (this.get_filename ());
-                    try {output.delete ();} catch (GLib.Error e) {};
+                    try {output.delete ();} catch (Error e) {};
                     var data_stream = new DataOutputStream (output.create (FileCreateFlags.NONE));
                     switch (ext) {
                         case "rtf":
@@ -68,7 +68,7 @@ namespace Writer.Utils {
                             break;
                     }
                     data_stream.put_string (str);
-                } catch (GLib.Error e) {
+                } catch (Error e) {
                     stderr.printf ("Error: %s\n", e.message);
                 }
             }
