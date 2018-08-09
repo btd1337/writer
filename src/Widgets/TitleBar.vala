@@ -65,9 +65,9 @@ namespace Writer.Widgets {
             save_as_item = new Gtk.MenuItem.with_label ("Save As");
             var preferences_item = new Gtk.MenuItem.with_label ("Preferences");
             var app_menu_menu = new Gtk.Menu ();
-                app_menu_menu.add (save_as_item);
-                app_menu_menu.add (new Gtk.SeparatorMenuItem ());
-                app_menu_menu.add (preferences_item);
+            app_menu_menu.add (save_as_item);
+            app_menu_menu.add (new Gtk.SeparatorMenuItem ());
+            app_menu_menu.add (preferences_item);
             var app_menu = app.create_appmenu (app_menu_menu);
 
             //Add buttons to TitleBar

@@ -33,15 +33,15 @@ namespace Writer.Widgets {
             this.editor = editor;
 
             var wrap_combobox = new Gtk.ComboBoxText ();
-                wrap_combobox.append ("In line of text", ("In line of text"));
-                wrap_combobox.append ("Float above text", ("Float above text"));
-                wrap_combobox.set_active_id ("In line of text");
+            wrap_combobox.append ("In line of text", ("In line of text"));
+            wrap_combobox.append ("Float above text", ("Float above text"));
+            wrap_combobox.set_active_id ("In line of text");
             var wrap_item = new Gtk.ToolItem ();
-                wrap_item.add (wrap_combobox);
+            wrap_item.add (wrap_combobox);
 
             var lock_aspect_check = new Gtk.CheckButton.with_label ("Lock aspect ratio");
             var lock_aspect_item = new Gtk.ToolItem ();
-                lock_aspect_item.add (lock_aspect_check);
+            lock_aspect_item.add (lock_aspect_check);
                 
             var align_item = new ToolItem ();
             align_button = new ModeButton ();
@@ -59,13 +59,13 @@ namespace Writer.Widgets {
             var edit_image_button = new Gtk.Button.with_label ("Crop");
             edit_image_button.tooltip_text = _("Crop the selected image");
             var edit_image_item = new Gtk.ToolItem ();
-                edit_image_item.add (edit_image_button);
+            edit_image_item.add (edit_image_button);
 
             var delete_image_button = new Gtk.Button.with_label ("Remove Image");
             delete_image_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
             delete_image_button.tooltip_text = _("Remove the selected image");
             var delete_image_item = new Gtk.ToolItem ();
-                delete_image_item.add (delete_image_button);
+            delete_image_item.add (delete_image_button);
             
 
             //Set border_width on ToolItems

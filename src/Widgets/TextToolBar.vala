@@ -52,101 +52,100 @@ namespace Writer.Widgets {
             // Make Widgets
 
             var paragraph_combobox = new Gtk.ComboBoxText ();
-                paragraph_combobox.append ("Paragraph", ("Paragraph"));
-                paragraph_combobox.append ("Title", ("Title"));
-                paragraph_combobox.append ("Subtitle", ("Subtitle"));
-                paragraph_combobox.append ("Bullet List", ("Bullet List"));
-                paragraph_combobox.append ("Numbered List", ("Numbered List"));
-                paragraph_combobox.append ("Two-Column", ("Two-Column"));
-                paragraph_combobox.set_active_id ("Paragraph");
+            paragraph_combobox.append ("Paragraph", ("Paragraph"));
+            paragraph_combobox.append ("Title", ("Title"));
+            paragraph_combobox.append ("Subtitle", ("Subtitle"));
+            paragraph_combobox.append ("Bullet List", ("Bullet List"));
+            paragraph_combobox.append ("Numbered List", ("Numbered List"));
+            paragraph_combobox.append ("Two-Column", ("Two-Column"));
+            paragraph_combobox.set_active_id ("Paragraph");
             var paragraph_item = new ToolItem ();
-                paragraph_item.add (paragraph_combobox);
-                paragraph_item.tooltip_text = _("Style");
+            paragraph_item.add (paragraph_combobox);
+            paragraph_item.tooltip_text = _("Style");
 
             var font_item = new ToolItem ();
-                font_button = new Gtk.FontButton ();
-                font_button.tooltip_text = _("Font");
-                font_button.use_font = true;
-                font_button.use_size = true;
-                font_item.add (font_button);
+            font_button = new Gtk.FontButton ();
+            font_button.tooltip_text = _("Font");
+            font_button.use_font = true;
+            font_button.use_size = true;
+            font_item.add (font_button);
 
             font_color_button = new Gtk.ColorButton ();
-                font_color_button.use_alpha = false;
-                font_color_button.set_title ("Choose a Font Color");
-                font_color_button.tooltip_text = _("Font Color");
-
+            font_color_button.use_alpha = false;
+            font_color_button.set_title ("Choose a Font Color");
+            font_color_button.tooltip_text = _("Font Color");
             var font_color_item = new Gtk.ToolItem ();
-                font_color_item.add (font_color_button);
+            font_color_item.add (font_color_button);
 
             var styles_item = new ToolItem ();
-                var styles_buttons = new ButtonGroup ();
-                    bold_button = new Gtk.ToggleButton ();
-                        bold_button.add (new Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.MENU));
-                        bold_button.tooltip_text = _("Add bold to text");
-                        bold_button.focus_on_click = false;
-                        styles_buttons.pack_start (bold_button);
-                    italic_button = new Gtk.ToggleButton ();
-                        italic_button.add (new Image.from_icon_name ("format-text-italic-symbolic", Gtk.IconSize.BUTTON));
-                        italic_button.tooltip_text = _("Add italic to text");
-                        italic_button.focus_on_click = false;
-                        styles_buttons.pack_start (italic_button);
-                    underline_button = new Gtk.ToggleButton ();
-                        underline_button.add (new Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.BUTTON));
-                        underline_button.tooltip_text = _("Add underline to text");
-                        underline_button.focus_on_click = false;
-                        styles_buttons.pack_start (underline_button);
-                    strikethrough_button = new Gtk.ToggleButton ();
-                        strikethrough_button.add (new Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.BUTTON));
-                        strikethrough_button.tooltip_text = _("Strikethrough text");
-                        strikethrough_button.focus_on_click = false;
-                        styles_buttons.pack_start (strikethrough_button);
-                styles_item.add (styles_buttons);
-
+            var styles_buttons = new ButtonGroup ();
+            bold_button = new Gtk.ToggleButton ();
+            bold_button.add (new Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.MENU));
+            bold_button.tooltip_text = _("Add bold to text");
+            bold_button.focus_on_click = false;
+            styles_buttons.pack_start (bold_button);
+            italic_button = new Gtk.ToggleButton ();
+            italic_button.add (new Image.from_icon_name ("format-text-italic-symbolic", Gtk.IconSize.BUTTON));
+            italic_button.tooltip_text = _("Add italic to text");
+            italic_button.focus_on_click = false;
+            styles_buttons.pack_start (italic_button);
+            underline_button = new Gtk.ToggleButton ();
+            underline_button.add (new Image.from_icon_name ("format-text-underline-symbolic", Gtk.IconSize.BUTTON));
+            underline_button.tooltip_text = _("Add underline to text");
+            underline_button.focus_on_click = false;
+            styles_buttons.pack_start (underline_button);
+            strikethrough_button = new Gtk.ToggleButton ();
+            strikethrough_button.add (new Image.from_icon_name ("format-text-strikethrough-symbolic", Gtk.IconSize.BUTTON));
+            strikethrough_button.tooltip_text = _("Strikethrough text");
+            strikethrough_button.focus_on_click = false;
+            styles_buttons.pack_start (strikethrough_button);
+            styles_item.add (styles_buttons);
 
             var align_item = new ToolItem ();
-                align_button = new ModeButton ();
-                var align_left = new Gtk.Image.from_icon_name ("format-justify-left-symbolic", Gtk.IconSize.BUTTON);
-                align_left.tooltip_text = _("Align left");
-                var align_center = new Gtk.Image.from_icon_name ("format-justify-center-symbolic", Gtk.IconSize.BUTTON);
-                align_center.tooltip_text = _("Align center");
-                var align_right = new Gtk.Image.from_icon_name ("format-justify-right-symbolic", Gtk.IconSize.BUTTON);
-                align_right.tooltip_text = _("Align right");
-                var text_fill = new Gtk.Image.from_icon_name ("format-justify-fill-symbolic", Gtk.IconSize.BUTTON);
-                text_fill.tooltip_text = _("Fill text");
-                align_button.append (align_left);
-                align_button.append (align_center);
-                align_button.append (align_right);
-                align_button.append (text_fill);
-                align_item.add (align_button);
+            align_button = new ModeButton ();
+            var align_left = new Gtk.Image.from_icon_name ("format-justify-left-symbolic", Gtk.IconSize.BUTTON);
+            align_left.tooltip_text = _("Align left");
+            var align_center = new Gtk.Image.from_icon_name ("format-justify-center-symbolic", Gtk.IconSize.BUTTON);
+            align_center.tooltip_text = _("Align center");
+            var align_right = new Gtk.Image.from_icon_name ("format-justify-right-symbolic", Gtk.IconSize.BUTTON);
+            align_right.tooltip_text = _("Align right");
+            var text_fill = new Gtk.Image.from_icon_name ("format-justify-fill-symbolic", Gtk.IconSize.BUTTON);
+            text_fill.tooltip_text = _("Fill text");
+            align_button.append (align_left);
+            align_button.append (align_center);
+            align_button.append (align_right);
+            align_button.append (text_fill);
+            align_item.add (align_button);
 
             var indent_button = new ButtonGroup ();
-                var indent_more_button = new Button.from_icon_name ("format-indent-more-symbolic", Gtk.IconSize.BUTTON);
-                indent_more_button.tooltip_text = _("More indent");
-                var indent_less_button = new Button.from_icon_name ("format-indent-less-symbolic", Gtk.IconSize.BUTTON);
-                indent_less_button.tooltip_text = _("Less indent");
-                indent_button.add (indent_more_button);
-                indent_button.add (indent_less_button);
+            var indent_more_button = new Button.from_icon_name ("format-indent-more-symbolic", Gtk.IconSize.BUTTON);
+            indent_more_button.tooltip_text = _("More indent");
+            var indent_less_button = new Button.from_icon_name ("format-indent-less-symbolic", Gtk.IconSize.BUTTON);
+            indent_less_button.tooltip_text = _("Less indent");
+            indent_button.add (indent_more_button);
+            indent_button.add (indent_less_button);
             var indent_item = new Gtk.ToolItem ();
-                indent_item.add (indent_button);
+            indent_item.add (indent_button);
 
             item_separator = new Gtk.SeparatorToolItem ();
 
             var insert_button = new ButtonGroup ();
-                var insert_comment_button = new Button.from_icon_name ("insert-text-symbolic", Gtk.IconSize.BUTTON);
-                insert_comment_button.tooltip_text = _("Insert text");
-                var insert_link_button = new Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.BUTTON);
-                insert_link_button.tooltip_text = _("Insert link");
-                var insert_image_button = new Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.BUTTON);
-                insert_image_button.tooltip_text = _("Insert image");
-                // Todo: Let's create & use table icon
-                var insert_table_button = new Button.from_icon_name ("insert-object-symbolic", Gtk.IconSize.BUTTON);
-                insert_table_button.tooltip_text = _("Insert table");
-                insert_button.add (insert_comment_button);
-                insert_button.add (insert_link_button);
-                insert_button.add (insert_image_button);
-                insert_button.add (insert_table_button);
+            var insert_comment_button = new Button.from_icon_name ("insert-text-symbolic", Gtk.IconSize.BUTTON);
+            insert_comment_button.tooltip_text = _("Insert text");
+            var insert_link_button = new Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.BUTTON);
+            insert_link_button.tooltip_text = _("Insert link");
+            var insert_image_button = new Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.BUTTON);
+            insert_image_button.tooltip_text = _("Insert image");
+            // Todo: Let's create & use table icon
+            var insert_table_button = new Button.from_icon_name ("insert-object-symbolic", Gtk.IconSize.BUTTON);
+            insert_table_button.tooltip_text = _("Insert table");
+            insert_button.add (insert_comment_button);
+            insert_button.add (insert_link_button);
+            insert_button.add (insert_image_button);
+            insert_button.add (insert_table_button);
             var insert_item = new Gtk.ToolItem ();
-                insert_item.add (insert_button);
+            insert_item.add (insert_button);
+            
 
             //Set border_width on ToolItems
             paragraph_item.border_width = 5;

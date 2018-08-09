@@ -46,11 +46,11 @@ namespace Writer.Widgets {
             
             // Make some labels
             var main_label = new Gtk.Label ("Table");
-                main_label.xalign = 0;
+            main_label.xalign = 0;
             var cols_label = new Gtk.Label ("Columns:");
-                cols_label.xalign = 0;
+            cols_label.xalign = 0;
             var rows_label = new Gtk.Label ("Rows:");
-                rows_label.xalign = 0;
+            rows_label.xalign = 0;
             
             // Package...
             attach (main_label, 0, 0, 2, 1);
