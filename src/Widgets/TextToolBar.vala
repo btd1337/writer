@@ -55,8 +55,6 @@ namespace Writer.Widgets {
             paragraph_combobox.append ("Paragraph", ("Paragraph"));
             paragraph_combobox.append ("Title", ("Title"));
             paragraph_combobox.append ("Subtitle", ("Subtitle"));
-            paragraph_combobox.append ("Bullet List", ("Bullet List"));
-            paragraph_combobox.append ("Numbered List", ("Numbered List"));
             paragraph_combobox.append ("Two-Column", ("Two-Column"));
             paragraph_combobox.set_active_id ("Paragraph");
             var paragraph_item = new ToolItem ();
