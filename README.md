@@ -13,7 +13,7 @@ You'll need the following dependencies to build:
 * libgranite (>= 0.3.0)
 * libgconf-2.0-dev
 * libzeitgeist-2.0
-* ninja
+* meson
 
 Clone this repo, run `meson build` to configure the build environment and run `ninja` to build
 
