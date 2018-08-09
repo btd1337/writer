@@ -282,7 +282,7 @@ namespace Writer {
         }
 
         public void clear_search () {
-            print ("Clearing search");
+            print ("Clearing search\n");
         }
 
 
