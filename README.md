@@ -8,12 +8,12 @@ Writer is a word processor for elementary OS that let you create simple and beau
 
 You'll need the following dependencies to build:
 
-* cmake
 * libgtk-3.0-dev
 * libgtksourceview-3.0-dev
 * libgranite (>= 0.3.0)
 * libgconf-2.0-dev
 * libzeitgeist-2.0
+* ninja
 
 Clone this repo, run `meson build` to configure the build environment and run `ninja` to build
 
