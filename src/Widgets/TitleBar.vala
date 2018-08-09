@@ -34,6 +34,8 @@ namespace Writer.Widgets {
         private Button save_as_button;
         private Button revert_button;
         private Button print_button;
+        private Gtk.MenuItem preferences_item;
+        private Gtk.MenuButton menu_button;
         private Gtk.SearchEntry search_field;
 
         public TitleBar (WriterApp app) {
@@ -64,19 +66,22 @@ namespace Writer.Widgets {
             });
 
             //AppMenu
-            var preferences_item = new Gtk.MenuItem.with_label ("Preferences");
-            var app_menu_menu = new Gtk.Menu ();
-            app_menu_menu.add (new Gtk.SeparatorMenuItem ());
-            app_menu_menu.add (preferences_item);
-            var app_menu = app.create_appmenu (app_menu_menu);
+            preferences_item = new Gtk.MenuItem.with_label (_("Preferences"));
+            var app_menu = new Gtk.Menu ();
+            app_menu.add (preferences_item);
+            menu_button = new Gtk.MenuButton ();
+            menu_button.set_popup (app_menu);
+            menu_button.set_image (new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR));
+            menu_button.tooltip_text = _("Preferences");
+            app_menu.show_all ();
 
             //Add buttons to TitleBar
             this.pack_start (open_button);
             this.pack_start (save_button);
             this.pack_start (save_as_button);
             this.pack_start (revert_button);
+            this.pack_end (menu_button);
             this.pack_end (print_button);
-            this.pack_end (app_menu);
             this.pack_end (search_field);
 
             //Connect signals
