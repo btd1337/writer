@@ -33,7 +33,9 @@ namespace Writer.Widgets {
         private Button save_button;
         private Button save_as_button;
         private Button revert_button;
-        private Button print_button;
+        private Gtk.MenuItem export_item;
+        private Gtk.MenuItem print_item;
+        private MenuButton export_button;
         private Gtk.MenuItem preferences_item;
         private Gtk.MenuButton menu_button;
         private Gtk.SearchEntry search_field;
@@ -55,8 +57,6 @@ namespace Writer.Widgets {
             save_as_button.tooltip_text = _("Save this file with a different name");
             revert_button = new Gtk.Button.from_icon_name ("document-revert", Gtk.IconSize.LARGE_TOOLBAR);
             revert_button.tooltip_text = _("Restore this file");
-            print_button = new Gtk.Button.from_icon_name ("document-export", Gtk.IconSize.LARGE_TOOLBAR);
-            print_button.tooltip_text = _("Print…");
 
             //Search Field
             search_field = new Gtk.SearchEntry ();
@@ -64,6 +64,18 @@ namespace Writer.Widgets {
             search_field.search_changed.connect (() => {
                 app.search (search_field.text);
             });
+
+            //Export Menu
+            export_item = new Gtk.MenuItem.with_label (_("Export to PDF…"));
+            print_item = new Gtk.MenuItem.with_label (_("Print…"));
+            var export_menu = new Gtk.Menu ();
+            export_menu.add (export_item);
+            export_menu.add (print_item);
+            export_button = new Gtk.MenuButton ();
+            export_button.set_popup (export_menu);
+            export_button.set_image (new Gtk.Image.from_icon_name ("document-export", Gtk.IconSize.LARGE_TOOLBAR));
+            export_button.tooltip_text = _("Print or export this file");
+            export_menu.show_all ();
 
             //AppMenu
             preferences_item = new Gtk.MenuItem.with_label (_("Preferences"));
@@ -81,7 +93,7 @@ namespace Writer.Widgets {
             this.pack_start (save_as_button);
             this.pack_start (revert_button);
             this.pack_end (menu_button);
-            this.pack_end (print_button);
+            this.pack_end (export_button);
             this.pack_end (search_field);
 
             //Connect signals
@@ -89,7 +101,9 @@ namespace Writer.Widgets {
             save_button.clicked.connect (app.save);
             save_as_button.clicked.connect (app.save_as);
             revert_button.clicked.connect (app.revert);
-            print_button.clicked.connect (app.print_file);
+
+            export_item.activate.connect (app.export_file);
+            print_item.activate.connect (app.print_file);
 
             preferences_item.activate.connect (app.preferences);
         }
@@ -97,11 +111,12 @@ namespace Writer.Widgets {
 
         public void set_active (bool active) {
             save_button.sensitive = active;
+            save_as_button.sensitive = active;
             revert_button.sensitive = active;
-            print_button.sensitive = active;
+            export_button.sensitive = active;
             search_field.sensitive = active;
 
-            save_as_button.sensitive = active;
+            export_button.sensitive = active;
         }
     }
 }

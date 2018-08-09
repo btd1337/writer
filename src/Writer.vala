@@ -89,6 +89,10 @@ namespace Writer {
             print ("revert\n");
         }
         
+        public void export_file () {
+            print ("export\n");
+        }
+
         public void print_file () {
             print ("print\n");
         }
