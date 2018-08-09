@@ -61,7 +61,7 @@ namespace Writer {
         }
         
         public void open_file_dialog () {
-            var filech = Utils.file_chooser_dialog (Gtk.FileChooserAction.OPEN, "Choose a file to open", window, false);
+            var filech = Utils.file_chooser_dialog (Gtk.FileChooserAction.OPEN, _("Choose a file to open"), window, false);
             
             if (filech.run () == Gtk.ResponseType.ACCEPT) {
                 var uri = filech.get_uris ().nth_data (0);

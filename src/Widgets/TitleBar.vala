@@ -60,7 +60,7 @@ namespace Writer.Widgets {
 
             //Search Field
             search_field = new Gtk.SearchEntry ();
-            search_field.placeholder_text = "Find";
+            search_field.placeholder_text = _("Find");
             search_field.search_changed.connect (() => {
                 app.search (search_field.text);
             });

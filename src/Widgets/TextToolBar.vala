@@ -52,10 +52,10 @@ namespace Writer.Widgets {
             // Make Widgets
 
             var paragraph_combobox = new Gtk.ComboBoxText ();
-            paragraph_combobox.append ("Paragraph", ("Paragraph"));
-            paragraph_combobox.append ("Title", ("Title"));
-            paragraph_combobox.append ("Subtitle", ("Subtitle"));
-            paragraph_combobox.append ("Two-Column", ("Two-Column"));
+            paragraph_combobox.append ("Paragraph", (_("Paragraph")));
+            paragraph_combobox.append ("Title", (_("Title")));
+            paragraph_combobox.append ("Subtitle", (_("Subtitle")));
+            paragraph_combobox.append ("Two-Column", (_("Two-Column")));
             paragraph_combobox.set_active_id ("Paragraph");
             var paragraph_item = new ToolItem ();
             paragraph_item.add (paragraph_combobox);
@@ -70,7 +70,7 @@ namespace Writer.Widgets {
 
             font_color_button = new Gtk.ColorButton ();
             font_color_button.use_alpha = false;
-            font_color_button.set_title ("Choose a Font Color");
+            font_color_button.set_title (_("Choose a Font Color"));
             font_color_button.tooltip_text = _("Font Color");
             var font_color_item = new Gtk.ToolItem ();
             font_color_item.add (font_color_button);

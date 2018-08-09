@@ -38,7 +38,7 @@ namespace Writer.Widgets {
             this.editor = editor;
 
             // TODO: Change to Gtk.PopOver
-            var table_properties_button = new Gtk.Button.with_label ("Table Properties");
+            var table_properties_button = new Gtk.Button.with_label (_("Table Properties"));
             var table_properties_item = new Gtk.ToolItem ();
             table_properties_item.add (table_properties_button);
 
@@ -96,12 +96,12 @@ namespace Writer.Widgets {
             align_button.append (text_fill);
             align_item.add (align_button);
                 
-            var add_table_button = new Gtk.Button.with_label ("Add");
+            var add_table_button = new Gtk.Button.with_label (_("Add"));
             add_table_button.tooltip_text = _("Add a table");
             var add_table_item = new Gtk.ToolItem ();
             add_table_item.add (add_table_button);
 
-            var delete_table_button = new Gtk.Button.with_label ("Delete");
+            var delete_table_button = new Gtk.Button.with_label (_("Delete"));
             delete_table_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
             delete_table_button.tooltip_text = _("Delete the selected table");
             var delete_table_item = new Gtk.ToolItem ();
