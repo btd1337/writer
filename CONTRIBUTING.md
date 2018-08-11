@@ -1,8 +1,10 @@
 # Contributing
 
+There are many ways you can contribute, even if you don't know how to code. I would appreciate it if you could contribute to this app!
+
 ## Reporting Issues or Suggesting Features
 
-I strongly recommend to see [elementary's Reference](https://elementary.io/docs/code/reference#reporting-bugs).
+I recommend to take a look at [elementary's Reference](https://elementary.io/docs/code/reference#reporting-bugs) and use it as a reference if you're new to this kind of things.
 
 ## How to Translate This App
 
