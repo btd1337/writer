@@ -67,4 +67,4 @@ You can also update your or others' translation if needed. In that case, you don
 * **If you can understand and would like to translate into multiple languages, please make separated PRs per languages!** It's not good thing to include more than two translation in your one PR.
 * Only edit and add `po/LINGUAS`, `po/extra/LINGUAS`, `po/<language_code>.po` and `po/extra/<language_code>.po` to your PR if you would like to add/update translation. Do NOT add other files in your PR.
 * If you have some knowledge of meson & ninja, please make sure your translation works by building this app. See [README.md](README.md) if need.
-* This file was created by refering https://github.com/lainsce/notejot/blob/master/po/README.md
+* This file was created by referring https://github.com/lainsce/notejot/blob/master/po/README.md
