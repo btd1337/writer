@@ -35,6 +35,8 @@ namespace Writer.Widgets {
         public ModeButton align_button;
     
         public TableToolBar (TextEditor editor) {
+            this.get_style_context ().add_class ("writer-toolbar");
+
             this.editor = editor;
 
             // TODO: Change to Gtk.PopOver
