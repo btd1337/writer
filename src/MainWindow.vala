@@ -50,7 +50,6 @@ namespace Writer {
             this.set_default_size (950, 800);
             this.window_position = Gtk.WindowPosition.CENTER;
             this.add_events (Gdk.EventMask.BUTTON_PRESS_MASK);
-            this.get_style_context ().add_class ("writer-window");
             Writer.Utils.add_stylesheet ();
             
             // Build UI
