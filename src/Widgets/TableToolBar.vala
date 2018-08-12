@@ -133,7 +133,7 @@ namespace Writer.Widgets {
             });
             
             font_button.font_set.connect (() => {
-                editor.set_font_from_string (font_button.get_font_name ());
+                editor.set_font_from_string (font_button.font);
             });
             font_color_button.color_set.connect (() => {
                 Gdk.Color color;
