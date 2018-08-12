@@ -1,6 +1,6 @@
 # Writer
 
-**Note: this is a work-in-progress app and has not been released yet.**
+**Note: this is a work-in-progress app. Some features may not work as expected or have not been implemented yet.**
 
 Writer is a word processor for elementary OS that let you create simple and beautiful documents.
 
