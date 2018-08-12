@@ -39,7 +39,7 @@ namespace Writer.Widgets {
         public Gtk.SeparatorToolItem item_separator;
 
         public TextToolBar (TextEditor editor) {
-            this.get_style_context ().add_class ("writer-toolbar");
+            this.get_style_context ().add_class ("toolbar");
 
             this.editor = editor;
             editor.cursor_moved.connect (cursor_moved);

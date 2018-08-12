@@ -28,7 +28,7 @@ namespace Writer.Utils {
                 background: @bg_color;
                 border-bottom: none;
             }
-            .writer-toolbar {
+            .toolbar {
                 background: @bg_color;
                 border-radius: 0;
             }

@@ -30,7 +30,7 @@ namespace Writer.Widgets {
         public ModeButton align_button;
     
         public ImageToolBar (TextEditor editor) {
-            this.get_style_context ().add_class ("writer-toolbar");
+            this.get_style_context ().add_class ("toolbar");
 
             this.editor = editor;
 
