@@ -78,7 +78,7 @@ namespace Writer.Widgets {
             var styles_item = new ToolItem ();
             var styles_buttons = new ButtonGroup ();
             bold_button = new Gtk.ToggleButton ();
-            bold_button.add (new Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.MENU));
+            bold_button.add (new Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.BUTTON));
             bold_button.tooltip_text = _("Add bold to text");
             bold_button.focus_on_click = false;
             styles_buttons.pack_start (bold_button);
