@@ -51,8 +51,7 @@ namespace Writer.Widgets {
             font_button.use_size = false;
             font_item.add (font_button);
 
-            var font_color_button = new Gtk.ColorButton ();
-            font_color_button.use_alpha = false;
+            var font_color_button = new Gtk.ColorButton.with_rgba ({0, 0, 0, 225});
             font_color_button.set_title (_("Choose a Font Color"));
             font_color_button.tooltip_text = _("Font Color");
             var font_color_item = new Gtk.ToolItem ();
