@@ -28,15 +28,6 @@ namespace Writer.Utils {
                 background: @bg_color;
                 border-radius: 0;
             }
-            
-            .writer-window .writer-toolbar 
-            
-            .writer-window .editor-view {
-                background-image: linear-gradient(to bottom,
-                                                  #F8F8F8,
-                                                  #F0F0F0
-                                                  );
-            }
         """;
     
     
