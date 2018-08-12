@@ -63,7 +63,7 @@ namespace Writer.Widgets {
             var edit_image_item = new Gtk.ToolItem ();
             edit_image_item.add (edit_image_button);
 
-            var delete_image_button = new Gtk.Button.with_label (_("Remove Image"));
+            var delete_image_button = new Gtk.Button.with_label (_("Remove this Image"));
             delete_image_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
             delete_image_button.tooltip_text = _("Remove the selected image");
             var delete_image_item = new Gtk.ToolItem ();

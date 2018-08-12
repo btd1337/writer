@@ -98,12 +98,12 @@ namespace Writer.Widgets {
             align_button.append (text_fill);
             align_item.add (align_button);
                 
-            var add_table_button = new Gtk.Button.with_label (_("Add"));
-            add_table_button.tooltip_text = _("Add a table");
+            var add_table_button = new Gtk.Button.with_label (_("Add a Table"));
+            add_table_button.tooltip_text = _("Add a new table");
             var add_table_item = new Gtk.ToolItem ();
             add_table_item.add (add_table_button);
 
-            var delete_table_button = new Gtk.Button.with_label (_("Delete"));
+            var delete_table_button = new Gtk.Button.with_label (_("Delete this Table"));
             delete_table_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
             delete_table_button.tooltip_text = _("Delete the selected table");
             var delete_table_item = new Gtk.ToolItem ();
