@@ -13,9 +13,9 @@ You'll need the following dependencies to build:
 * libgtk-3.0-dev (>= 3.22)
 * libgtksourceview-3.0-dev
 * libgranite
-* libgconf-2.0-dev
 * libzeitgeist-2.0
 * meson
+* valac
 
 Clone this repo, run `meson build` to configure the build environment and run `ninja` to build
 

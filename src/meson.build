@@ -28,7 +28,6 @@ executable(
         'MainWindow.vala',
         'Writer.vala',
     dependencies: [
-        dependency('gconf-2.0'),
         dependency('gee-0.8'),
         dependency('glib-2.0'),
         dependency('granite'),
