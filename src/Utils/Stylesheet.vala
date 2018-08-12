@@ -24,6 +24,10 @@ namespace Writer.Utils {
     public void add_stylesheet () {
     
         string stylesheet = """
+            .titlebar {
+                background: @bg_color;
+                border-bottom: none;
+            }
             .writer-window .writer-toolbar {
                 background: @bg_color;
                 border-radius: 0;

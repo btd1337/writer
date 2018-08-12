@@ -46,7 +46,7 @@ namespace Writer.Widgets {
             this.app = app;
             this.title = "Writer";
             this.set_show_close_button (true);
-            this.get_style_context ().add_class ("primary-toolbar");
+            this.get_style_context ().add_class ("titlebar");
 
             //Make buttons
             open_button = new Gtk.Button.from_icon_name ("document-open", Gtk.IconSize.LARGE_TOOLBAR);
