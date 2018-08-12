@@ -8,7 +8,7 @@ Writer is a word processor for elementary OS that let you create simple and beau
 
 ## Building, Testing, and Installation
 
-You'll need the following dependencies to build:
+You'll need the following dependencies:
 
 * libgtk-3.0-dev (>= 3.22)
 * libgtksourceview-3.0-dev
@@ -17,7 +17,7 @@ You'll need the following dependencies to build:
 * meson
 * valac
 
-Clone this repo, run `meson build` to configure the build environment and run `ninja` to build
+Clone this repo, run `meson build` to configure the build environment. Change to the build directory and run `ninja` to build
 
 ```
 git clone https://github.com/ryonakano/writer.git && cd writer/
