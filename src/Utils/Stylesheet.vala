@@ -25,14 +25,8 @@ namespace Writer.Utils {
     
         string stylesheet = """
             .writer-window .writer-toolbar {
-                padding: 3px;
-                background: linear-gradient(to bottom,
-                                            #F8F8F8,
-                                            #F8F8F8 65%,
-                                            #F0F0F0
-                                            );
-                border: none;
-                border-bottom: 1px solid #DADADA;
+                background: @bg_color;
+                border-radius: 0;
             }
             
             .writer-window .writer-toolbar 
@@ -58,6 +52,6 @@ namespace Writer.Utils {
             print ("CSS loading error: %s\n", error.message);
         }
         
-        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), style_provider, Gtk.STYLE_PROVIDER_PRIORITY_USER);
+        Gtk.StyleContext.add_provider_for_screen (Gdk.Screen.get_default (), style_provider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION);
     }
 }
