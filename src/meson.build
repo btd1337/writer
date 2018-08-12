@@ -32,7 +32,7 @@ executable(
         dependency('gee-0.8'),
         dependency('glib-2.0'),
         dependency('granite'),
-        dependency('gtk+-3.0'),
+        dependency('gtk+-3.0', version: '>=3.22'),
         dependency('gtksourceview-3.0'),
         dependency('zeitgeist-2.0'),
         meson.get_compiler('vala').find_library('posix'),

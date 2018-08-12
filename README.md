@@ -10,9 +10,9 @@ Writer is a word processor for elementary OS that let you create simple and beau
 
 You'll need the following dependencies to build:
 
-* libgtk-3.0-dev
+* libgtk-3.0-dev (>= 3.22)
 * libgtksourceview-3.0-dev
-* libgranite (>= 0.3.0)
+* libgranite
 * libgconf-2.0-dev
 * libzeitgeist-2.0
 * meson
