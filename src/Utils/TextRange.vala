@@ -48,7 +48,7 @@ namespace Writer.Utils {
          */
 
 
-         // Check if every Iter in the range has the given tag
+        // Check if every Iter in the range has the given tag
         public bool has_tag (TextTag tag) {
             TextIter temp;
             for (int i = this.start_offset; i < this.end_offset; i++) {
