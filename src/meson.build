@@ -1,6 +1,5 @@
 executable(
     meson.project_name(),
-        'Utils/BugFixAchive.vala',
         'Utils/Document.vala',
         'Utils/FileChooser.vala',
         'Utils/Stylesheet.vala',
@@ -16,7 +15,6 @@ executable(
         'Widgets/TitleBar.vala',
         'Widgets/ToolBar.vala',
         'Widgets/WelcomeView.vala',
-        #'config.vala',
         'MainWindow.vala',
         'Writer.vala',
     dependencies: [
