@@ -1,11 +1,3 @@
-config_data = configuration_data()
-config_data.set('GETTEXT_PACKAGE', meson.project_name())
-gettext_declaration = configure_file(
-    configuration: config_data,
-    input: 'config.vala.in',
-    output: 'config.vala'
-)
-
 executable(
     meson.project_name(),
         'Utils/BugFixAchive.vala',
