@@ -23,27 +23,27 @@ using Gtk;
 
 namespace Writer.Widgets {
     public class TableChooser : Gtk.Grid {
-    
+
         public int columns;
         public int rows;
-        
+
         public signal void selected (int columns, int rows);
-        
+
         public TableChooser () {
             column_spacing = 6;
             row_spacing = 4;
-            
-            
+
+
             setup_ui ();
         }
-        
+
         private void setup_ui () {
             // Make some content
             var cols_spin = new Gtk.SpinButton.with_range (1, 10, 1);
             var rows_spin = new Gtk.SpinButton.with_range (1, 10, 1);
-            
+
             var insert_button = new Gtk.Button.with_label (_("Insert Table"));
-            
+
             // Make some labels
             var main_label = new Gtk.Label (_("Table"));
             main_label.xalign = 0;
@@ -51,7 +51,7 @@ namespace Writer.Widgets {
             cols_label.xalign = 0;
             var rows_label = new Gtk.Label (_("Rows:"));
             rows_label.xalign = 0;
-            
+
             // Package...
             attach (main_label, 0, 0, 2, 1);
             attach (cols_label, 0, 1, 1, 1);
@@ -59,8 +59,8 @@ namespace Writer.Widgets {
             attach (rows_label, 0, 2, 1, 1);
             attach (rows_spin, 1, 2, 1, 1);
             attach (insert_button, 0, 3, 2, 1);
-            
-            
+
+
             // Attach signals
             insert_button.clicked.connect (() => {
                 columns = cols_spin.get_value_as_int ();
@@ -68,7 +68,6 @@ namespace Writer.Widgets {
                 selected (columns, rows);
             });
         }
-    
+
     }
 }
-

@@ -25,7 +25,7 @@ using Granite.Widgets;
 
 namespace Writer.Widgets {
     public class TableToolBar : Gtk.Toolbar {
-    
+
         private TextEditor editor;
         public FontButton font_button;
         public ToggleButton bold_button;
@@ -33,7 +33,7 @@ namespace Writer.Widgets {
         public ToggleButton underline_button;
         public ToggleButton strikethrough_button;
         public ModeButton align_button;
-    
+
         public TableToolBar (TextEditor editor) {
             this.get_style_context ().add_class ("toolbar");
 
@@ -56,7 +56,7 @@ namespace Writer.Widgets {
             font_color_button.tooltip_text = _("Font Color");
             var font_color_item = new Gtk.ToolItem ();
             font_color_item.add (font_color_button);
-                
+
             var styles_item = new ToolItem ();
             var styles_buttons = new ButtonGroup ();
             bold_button = new Gtk.ToggleButton ();
@@ -80,7 +80,7 @@ namespace Writer.Widgets {
             strikethrough_button.focus_on_click = false;
             styles_buttons.pack_start (strikethrough_button);
             styles_item.add (styles_buttons);
-                
+
             var align_item = new ToolItem ();
             align_button = new ModeButton ();
             var align_left = new Gtk.Image.from_icon_name ("format-justify-left-symbolic", Gtk.IconSize.BUTTON);
@@ -96,7 +96,7 @@ namespace Writer.Widgets {
             align_button.append (align_right);
             align_button.append (text_fill);
             align_item.add (align_button);
-                
+
             var add_table_button = new Gtk.Button.with_label (_("Add a Table"));
             add_table_button.tooltip_text = _("Add a new table");
             var add_table_item = new Gtk.ToolItem ();
@@ -107,8 +107,8 @@ namespace Writer.Widgets {
             delete_table_button.tooltip_text = _("Delete the selected table");
             var delete_table_item = new Gtk.ToolItem ();
             delete_table_item.add (delete_table_button);
-            
-            
+
+
             //Set border_width on ToolItems
             table_properties_item.border_width = 5;
             font_item.border_width = 5;
@@ -126,11 +126,11 @@ namespace Writer.Widgets {
             this.add (align_item);
             this.add (add_table_item);
             this.add (delete_table_item);
-            
+
             align_button.mode_changed.connect (() => {
                 change_align (align_button.selected);
             });
-            
+
             font_button.font_set.connect (() => {
                 editor.set_font_from_string (font_button.font);
             });
@@ -139,7 +139,7 @@ namespace Writer.Widgets {
                 font_color_button.get_color (out color);
                 editor.set_font_color (color);
             });
-            
+
             bold_button.button_press_event.connect ((event) => {
                 if (event.type == EventType.BUTTON_PRESS)
                     editor.toggle_style ("bold");
@@ -160,9 +160,9 @@ namespace Writer.Widgets {
                     editor.toggle_style ("strikethrough");
                 return false;
             });
-            
+
         }
-        
+
         public void change_align (int index) {
             switch (index) {
                 case 1:

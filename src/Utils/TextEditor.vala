@@ -326,7 +326,7 @@ namespace Writer {
 
 
         private void update_styles () {
-            var iter = get_cursor();
+            var iter = get_cursor ();
 
             style_bold = iter_has_style (iter, "bold");
             style_italic = iter_has_style (iter, "italic");

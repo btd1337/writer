@@ -25,10 +25,10 @@ using Granite.Widgets;
 
 namespace Writer.Widgets {
     public class ImageToolBar : Gtk.Toolbar {
-    
+
         private TextEditor editor;
         public ModeButton align_button;
-    
+
         public ImageToolBar (TextEditor editor) {
             this.get_style_context ().add_class ("toolbar");
 
@@ -44,7 +44,7 @@ namespace Writer.Widgets {
             var lock_aspect_check = new Gtk.CheckButton.with_label (_("Lock aspect ratio"));
             var lock_aspect_item = new Gtk.ToolItem ();
             lock_aspect_item.add (lock_aspect_check);
-                
+
             var align_item = new ToolItem ();
             align_button = new ModeButton ();
             var align_left = new Gtk.Image.from_icon_name ("format-justify-left-symbolic", Gtk.IconSize.BUTTON);
@@ -57,7 +57,7 @@ namespace Writer.Widgets {
             align_button.append (align_center);
             align_button.append (align_right);
             align_item.add (align_button);
-                
+
             var edit_image_button = new Gtk.Button.with_label (_("Crop"));
             edit_image_button.tooltip_text = _("Crop the selected image");
             var edit_image_item = new Gtk.ToolItem ();
@@ -68,7 +68,7 @@ namespace Writer.Widgets {
             delete_image_button.tooltip_text = _("Remove the selected image");
             var delete_image_item = new Gtk.ToolItem ();
             delete_image_item.add (delete_image_button);
-            
+
 
             //Set border_width on ToolItems
             wrap_item.border_width = 5;
@@ -77,19 +77,19 @@ namespace Writer.Widgets {
             edit_image_item.border_width = 5;
             align_item.border_width = 5;
             delete_image_item.border_width = 5;
-            
+
             // Add Widgets            
             this.add (wrap_item);
             this.add (lock_aspect_item);
             this.add (align_item);
             this.add (edit_image_item);
             this.add (delete_image_item);
-            
+
             align_button.mode_changed.connect (() => {
                 change_align (align_button.selected);
             });
         }
-        
+
         public void change_align (int index) {
             switch (index) {
                 case 1:

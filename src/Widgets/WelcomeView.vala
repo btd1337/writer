@@ -23,21 +23,21 @@ using Granite.Widgets;
 
 namespace Writer.Widgets {
     public class WelcomeView : Welcome {
-    
+
         private WriterApp app;
-        
+
         public WelcomeView (WriterApp app) {
             base (_("No Documents Open"), _("Open a document to begin editing."));
-            
+
             this.app = app;
-            
+
             this.append ("document-new", _("New File"), _("Create a new document."));
             this.append ("document-open", _("Open File"), _("Open a saved document."));
-            
+
             this.activated.connect ((index) => {
                 // TODO
                 // Open recent
-                if(index == 0) {
+                if (index == 0) {
                     app.new_file ();
                 }
                 else {
@@ -45,6 +45,6 @@ namespace Writer.Widgets {
                 }
             });
         }
-    
+
     }
 }

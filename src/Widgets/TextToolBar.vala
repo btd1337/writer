@@ -142,7 +142,7 @@ namespace Writer.Widgets {
             insert_button.add (insert_table_button);
             var insert_item = new Gtk.ToolItem ();
             insert_item.add (insert_button);
-            
+
 
             //Set border_width on ToolItems
             paragraph_item.border_width = 5;
