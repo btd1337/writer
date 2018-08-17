@@ -16,20 +16,16 @@ Translating some app and making it easy-to-use for more people are one of the mo
 
 First of all fork this repo on GitHub and clone the forked repo to local:
 
-```
-git clone https://github.com/your-username/writer.git
-```
+    git clone https://github.com/your-username/writer.git
 
 Next, search for your language code (e.g. en = English, zh = Chinese). See https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes if you need. Then add it to `po/LINGUAS` and `po/extra/LINGUAS`, in a new line, after the last line.
 
 After that, run the following command to create/update po files:
 
-```
-meson build --prefix=/usr
-cd build/
-ninja com.github.ryonakano.writer-update-po
-ninja extra-update-po
-```
+    meson build --prefix=/usr
+    cd build/
+    ninja com.github.ryonakano.writer-update-po
+    ninja extra-update-po
 
 Other language files are also updated when you run this command, but **ignore them.**
 
@@ -41,17 +37,13 @@ Now what you've been waiting for! Translate `po/<language_code>.po` and `po/extr
 
 After you save the po file, open a terminal in the folder you've cloned this repo in and type:
 
-```
-git checkout -b "<language_code>-translation"
-```
+    git checkout -b "<language_code>-translation"
 
 Then add the po file and LINGUAS file you've updated. **Do not add other files!**
 
-```
-git add po/LINGUAS po/extra/LINGUAS po/<language_code>.po po/extra/<language_code>.po
-git commit -m "Add <Language Name> translation"
-git push origin master
-```
+    git add po/LINGUAS po/extra/LINGUAS po/<language_code>.po po/extra/<language_code>.po
+    git commit -m "Add <Language Name> translation"
+    git push origin master
 
 Type your github username and password if you are asked. Finally, open your cloned repo and select "Compare & Pull Request".
 

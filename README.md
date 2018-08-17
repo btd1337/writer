@@ -19,19 +19,15 @@ You'll need the following dependencies:
 
 Clone this repo, run `meson build` to configure the build environment. Change to the build directory and run `ninja` to build
 
-```
-git clone https://github.com/ryonakano/writer.git && cd writer/
-meson build --prefix=/usr
-cd build/
-ninja
-```
+    git clone https://github.com/ryonakano/writer.git && cd writer/
+    meson build --prefix=/usr
+    cd build/
+    ninja
 
 To install, use `ninja install`, then execute with `com.github.ryonakano.writer`
 
-```
-sudo ninja install
-com.github.ryonakano.writer
-```
+    sudo ninja install
+    com.github.ryonakano.writer
 
 ## Contributing
 
