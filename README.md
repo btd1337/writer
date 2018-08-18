@@ -12,7 +12,7 @@ You'll need the following dependencies:
 
 * libgtk-3.0-dev (>= 3.22)
 * libgtksourceview-3.0-dev
-* libgranite
+* libgranite-dev
 * libzeitgeist-2.0
 * meson
 * valac
