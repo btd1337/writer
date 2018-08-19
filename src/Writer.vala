@@ -94,7 +94,7 @@ namespace Writer {
         }
 
         public void search (string text) {
-            // When tabs will be added, first get the active Editor
+            // TODO: When tabs will be added, first get the active Editor
             editor.search (text);
         }
 
