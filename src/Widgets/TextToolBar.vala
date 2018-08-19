@@ -128,7 +128,7 @@ namespace Writer.Widgets {
             insert_link_button.tooltip_text = _("Insert link");
             var insert_image_button = new Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.BUTTON);
             insert_image_button.tooltip_text = _("Insert image");
-            // Todo: Let's create & use table icon
+            // TODO: Let's create & use table icon
             var insert_table_button = new Button.from_icon_name ("insert-object-symbolic", Gtk.IconSize.BUTTON);
             insert_table_button.tooltip_text = _("Insert table");
             insert_button.add (insert_comment_button);
