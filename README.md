@@ -1,8 +1,8 @@
-# Writer
+# Writer — The Word Processor of the 21st Century
 
 **Note: this is a work-in-progress app. Some features may not work as expected or have not been implemented yet.**
 
-Writer is a word processor for elementary OS that let you create simple and beautiful documents.
+Writer is a word processor designed for elementary OS that let you create simple and beautiful documents.
 
 ![Writter Screenshot](data/Screenshot.png)
 
