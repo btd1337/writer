@@ -63,7 +63,7 @@ You can also update your or others' translation if needed. In that case, you don
 -->
 ## Writing Some Code
 
-Before coding, fork the project and build it as explained above.
+Before coding, fork this repository and clone the forked one to local.
 
 We are using Vala, as many other elementary OS apps, so it would be better if you know a bit about it, but you don't have to be an expert.
 
