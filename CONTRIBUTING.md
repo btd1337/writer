@@ -6,7 +6,8 @@ There are many ways you can contribute, even if you don't know how to code. I wo
 
 I recommend to take a look at [elementary's Reference](https://elementary.io/docs/code/reference#reporting-bugs) and use it as a reference if you're new to this kind of things.
 
-## How to Translate This App
+<!--
+## Translaing This App
 
 Translating some app and making it easy-to-use for more people are one of the most important things. Though the core thing is translation, there are some process to do it. Let's walk through it!
 
@@ -59,6 +60,16 @@ You can also update your or others' translation if needed. In that case, you don
 * **If you can understand and would like to translate into multiple languages, please make separated PRs per languages!** It's not good thing to include more than two translation in your one PR.
 * Only edit and add `po/LINGUAS`, `po/extra/LINGUAS`, `po/<language_code>.po` and `po/extra/<language_code>.po` to your PR if you would like to add/update translation. Do NOT add other files in your PR.
 * If you have some knowledge of meson & ninja, please make sure your translation works by building this app. See [README.md](README.md) if you need.
+-->
+## Writing Some Code
+
+Before coding, fork the project and build it as explained above.
+
+We are using Vala, as many other elementary OS apps, so it would be better if you know a bit about it, but you don't have to be an expert.
+
+Before writing some code, let the others know on what you'll be working. The best way to do that is to go to the related issue (or create it if it doesn't exist yet), and to say that you are working on it. Then start a new branch on your fork, based on `master` (and be sure master is up-to-date). You can start coding.
+
+We use the [same conventions as elementary OS](https://elementary.io/fr/docs/code/reference#code-style) in our code, please try to respect them.
 
 ## References
 
