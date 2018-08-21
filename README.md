@@ -28,6 +28,11 @@ To install, use `ninja install`, then execute with `com.github.ryonakano.writer`
 
     sudo ninja install
     com.github.ryonakano.writer
+    
+## Arch Linux
+Arch Linux users can find Writer under the name [writer-git](https://aur.archlinux.org/packages/writer-git/) in the **AUR**:
+
+`$ aurman -S writer-git`
 
 ## Contributing
 
