@@ -20,7 +20,7 @@ using Gdk;
 using Granite.Widgets;
 
 namespace Writer.Widgets {
-    public class TextToolBar : Gtk.Toolbar {
+    public class TextToolBar : Gtk.Grid {
 
         private TextEditor editor;
         public FontButton font_button;
@@ -35,8 +35,6 @@ namespace Writer.Widgets {
         public Gtk.SeparatorToolItem item_separator;
 
         public TextToolBar (TextEditor editor) {
-            this.get_style_context ().add_class ("toolbar");
-
             this.editor = editor;
             editor.cursor_moved.connect (cursor_moved);
 
@@ -149,15 +147,12 @@ namespace Writer.Widgets {
             insert_item.border_width = 5;
 
             // Add Widgets
-            this.add (paragraph_item);
-            this.add (font_item);
-            this.add (font_color_item);
-            this.add (styles_item);
-            this.add (align_item);
-            this.add (indent_item);
-            this.add (item_separator);
-            this.add (insert_item);
-
+            attach (paragraph_item, 0, 0, 1, 1);
+            attach (font_item, 0, 1, 1, 1);
+            attach (font_color_item, 1, 1, 1, 1);
+            attach (styles_item, 0, 2, 1, 1);
+            attach (align_item, 0, 3, 1, 1);
+            attach (indent_item, 0, 4, 1, 1);
 
             // Connect signals
             align_button.mode_changed.connect (() => {
