@@ -20,7 +20,7 @@ using Gdk;
 using Granite.Widgets;
 
 namespace Writer.Widgets {
-    public class TableToolBar : Gtk.Toolbar {
+    public class TableToolBar : Gtk.Grid {
 
         private TextEditor editor;
         public FontButton font_button;
@@ -30,17 +30,13 @@ namespace Writer.Widgets {
         public ToggleButton strikethrough_button;
         public ModeButton align_button;
 
-        public TableToolBar (TextEditor editor) {
-            this.get_style_context ().add_class ("toolbar");
-
-            this.editor = editor;
-
-            // TODO: Change to Gtk.PopOver
-            var table_properties_button = new Gtk.Button.with_label (_("Table Properties"));
+        public TableToolBar () {
+            var table_properties_label = new Gtk.Label (_("Table Properties"));
+            table_properties_label.get_style_context ().add_class ("h3");
             var table_properties_item = new Gtk.ToolItem ();
-            table_properties_item.add (table_properties_button);
+            table_properties_item.add (table_properties_label);
 
-            var font_item = new ToolItem ();
+            var font_item = new Gtk.ToolItem ();
             font_button = new Gtk.FontButton ();
             font_button.tooltip_text = _("Font");
             font_button.use_font = true;
@@ -52,7 +48,7 @@ namespace Writer.Widgets {
             var font_color_item = new Gtk.ToolItem ();
             font_color_item.add (font_color_button);
 
-            var styles_item = new ToolItem ();
+            var styles_item = new Gtk.ToolItem ();
             var styles_buttons = new ButtonGroup ();
             bold_button = new Gtk.ToggleButton ();
             bold_button.add (new Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.BUTTON));
@@ -92,35 +88,22 @@ namespace Writer.Widgets {
             align_button.append (text_fill);
             align_item.add (align_button);
 
-            var add_table_button = new Gtk.Button.with_label (_("Add a Table"));
-            add_table_button.tooltip_text = _("Add a new table");
-            var add_table_item = new Gtk.ToolItem ();
-            add_table_item.add (add_table_button);
-
             var delete_table_button = new Gtk.Button.with_label (_("Delete this Table"));
             delete_table_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
             delete_table_button.tooltip_text = _("Delete the selected table");
             var delete_table_item = new Gtk.ToolItem ();
             delete_table_item.add (delete_table_button);
 
-
-            // Set border_width on ToolItems
-            table_properties_item.border_width = 5;
-            font_item.border_width = 5;
-            font_color_item.border_width = 5;
-            styles_item.border_width = 5;
-            align_item.border_width = 5;
-            add_table_item.border_width = 5;
-            delete_table_item.border_width = 5;
-
-            // Add Widgets            
-            this.add (table_properties_item);
-            this.add (font_item);
-            this.add (font_color_item);
-            this.add (styles_item);
-            this.add (align_item);
-            this.add (add_table_item);
-            this.add (delete_table_item);
+            // Add Widgets
+            margin = 12;
+            column_spacing = 6;
+            row_spacing = 6;
+            attach (table_properties_item, 0, 0, 1, 1);
+            attach (font_item, 0, 1, 2, 1);
+            attach (font_color_item, 3, 1, 1, 1);
+            attach (styles_item, 0, 2, 1, 1);
+            attach (align_item, 0, 3, 1, 1);
+            attach (delete_table_item, 0, 4, 1, 1);
 
             align_button.mode_changed.connect (() => {
                 change_align (align_button.selected);
