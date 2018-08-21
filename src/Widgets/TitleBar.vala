@@ -71,20 +71,46 @@ namespace Writer.Widgets {
             export_button.tooltip_text = _("Print or export this file");
             export_menu.show_all ();
 
-            // AppMenu
+            // Main Menu (Inspired form Code)
+            // Create zoom in/out button
+            // TODO: Add actions for each button
+            var zoom_out_button = new Gtk.Button.from_icon_name ("zoom-out-symbolic", Gtk.IconSize.MENU);
+            zoom_out_button.tooltip_text = _("Zoom Out");
+
+            var zoom_default_button = new Gtk.Button.with_label ("100%");
+            zoom_default_button.tooltip_text = _("Zoom 1:1");
+
+            var zoom_in_button = new Gtk.Button.from_icon_name ("zoom-in-symbolic", Gtk.IconSize.MENU);
+            zoom_in_button.tooltip_text = _("Zoom In");
+
+            // Combine three buttons above to a grid
+            var zoom_size_grid = new Gtk.Grid ();
+            zoom_size_grid.column_homogeneous = true; // Use same width for column
+            zoom_size_grid.hexpand = true;
+            zoom_size_grid.margin = 12;
+            zoom_size_grid.get_style_context ().add_class (Gtk.STYLE_CLASS_LINKED);
+            zoom_size_grid.add (zoom_out_button);
+            zoom_size_grid.add (zoom_default_button);
+            zoom_size_grid.add (zoom_in_button);
+
+            // Create preferences button
             var preferences_menuitem = new Gtk.ModelButton ();
             preferences_menuitem.text = _("Preferences");
 
+            // Add to main grid
             var menu_grid = new Gtk.Grid ();
             menu_grid.margin_bottom = 3;
-            menu_grid.margin_top = 3;
             menu_grid.orientation = Gtk.Orientation.VERTICAL;
-            menu_grid.attach (preferences_menuitem, 0, 0, 1, 1);
+            menu_grid.width_request = 200;
+            menu_grid.attach (zoom_size_grid, 0, 0, 3, 1);
+            menu_grid.attach (preferences_menuitem, 0, 1, 3, 1);
             menu_grid.show_all ();
 
+            // Set popover
             var menu = new Gtk.Popover (null);
             menu.add (menu_grid);
 
+            // Create button for Main Menu
             var app_menu = new Gtk.MenuButton ();
             app_menu.image = new Gtk.Image.from_icon_name ("open-menu", Gtk.IconSize.LARGE_TOOLBAR);
             app_menu.tooltip_text = _("Menu");
