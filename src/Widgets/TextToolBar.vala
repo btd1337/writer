@@ -32,7 +32,6 @@ namespace Writer.Widgets {
         public Button indent_more_button;
         public Button indent_less_button;
         public ModeButton align_button;
-        public Gtk.SeparatorToolItem item_separator;
 
         public TextToolBar (TextEditor editor) {
             this.editor = editor;
@@ -42,8 +41,10 @@ namespace Writer.Widgets {
         }
 
         public void setup_ui () {
-
-            // Make Widgets
+            var text_properties_label = new Gtk.Label (_("Text Properties"));
+            text_properties_label.get_style_context ().add_class ("h3");
+            var text_properties_item = new Gtk.ToolItem ();
+            text_properties_item.add (text_properties_label);
 
             var paragraph_combobox = new Gtk.ComboBoxText ();
             paragraph_combobox.append ("Paragraph", (_("Paragraph")));
@@ -55,6 +56,7 @@ namespace Writer.Widgets {
             paragraph_item.add (paragraph_combobox);
             paragraph_item.tooltip_text = _("Style");
 
+            // TODO: Update the font button
             var font_item = new ToolItem ();
             font_button = new Gtk.FontButton ();
             font_button.tooltip_text = _("Font");
@@ -62,6 +64,7 @@ namespace Writer.Widgets {
             font_button.use_size = false;
             font_item.add (font_button);
 
+            // TODO: Update the color button
             font_color_button = new Gtk.ColorButton.with_rgba ({0, 0, 0, 225});
             font_color_button.tooltip_text = _("Font Color");
             var font_color_item = new Gtk.ToolItem ();
@@ -117,42 +120,17 @@ namespace Writer.Widgets {
             var indent_item = new Gtk.ToolItem ();
             indent_item.add (indent_button);
 
-            item_separator = new Gtk.SeparatorToolItem ();
-
-            var insert_button = new ButtonGroup ();
-            var insert_comment_button = new Button.from_icon_name ("insert-text-symbolic", Gtk.IconSize.BUTTON);
-            insert_comment_button.tooltip_text = _("Insert text");
-            var insert_link_button = new Button.from_icon_name ("insert-link-symbolic", Gtk.IconSize.BUTTON);
-            insert_link_button.tooltip_text = _("Insert link");
-            var insert_image_button = new Button.from_icon_name ("insert-image-symbolic", Gtk.IconSize.BUTTON);
-            insert_image_button.tooltip_text = _("Insert image");
-            // TODO: Let's create & use table icon
-            var insert_table_button = new Button.from_icon_name ("insert-object-symbolic", Gtk.IconSize.BUTTON);
-            insert_table_button.tooltip_text = _("Insert table");
-            insert_button.add (insert_comment_button);
-            insert_button.add (insert_link_button);
-            insert_button.add (insert_image_button);
-            insert_button.add (insert_table_button);
-            var insert_item = new Gtk.ToolItem ();
-            insert_item.add (insert_button);
-
-
-            // Set border_width on ToolItems
-            paragraph_item.border_width = 5;
-            font_item.border_width = 5;
-            font_color_item.border_width = 5;
-            styles_item.border_width = 5;
-            align_item.border_width = 5;
-            indent_item.border_width = 5;
-            insert_item.border_width = 5;
-
             // Add Widgets
-            attach (paragraph_item, 0, 0, 1, 1);
-            attach (font_item, 0, 1, 1, 1);
-            attach (font_color_item, 1, 1, 1, 1);
-            attach (styles_item, 0, 2, 1, 1);
-            attach (align_item, 0, 3, 1, 1);
-            attach (indent_item, 0, 4, 1, 1);
+            margin = 12;
+            column_spacing = 6;
+            row_spacing = 6;
+            attach (text_properties_item, 0, 0, 1, 1);
+            attach (paragraph_item, 0, 1, 1, 1);
+            attach (font_item, 0, 2, 1, 1);
+            attach (font_color_item, 1, 2, 1, 1);
+            attach (styles_item, 0, 3, 1, 1);
+            attach (align_item, 0, 4, 1, 1);
+            attach (indent_item, 1, 4, 1, 1);
 
             // Connect signals
             align_button.mode_changed.connect (() => {
@@ -216,9 +194,6 @@ namespace Writer.Widgets {
             strikethrough_button.active = editor.has_style ("strikethrough");
 
             align_button.selected = editor.get_justification_as_int ();
-
-            // TODO
-            // Update font and color buttons
         }
 
     }
