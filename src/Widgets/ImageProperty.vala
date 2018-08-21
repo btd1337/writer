@@ -20,12 +20,12 @@ using Gdk;
 using Granite.Widgets;
 
 namespace Writer.Widgets {
-    public class ImageToolBar : Gtk.Grid {
+    public class ImageProperty : Gtk.Grid {
 
         private TextEditor editor;
         public ModeButton align_button;
 
-        public ImageToolBar (TextEditor editor) {
+        public ImageProperty (TextEditor editor) {
             this.editor = editor;
             var image_properties_label = new Gtk.Label (_("Image Properties"));
             image_properties_label.get_style_context ().add_class ("h3");

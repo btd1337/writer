@@ -20,57 +20,37 @@ using Gdk;
 using Granite.Widgets;
 
 namespace Writer.Widgets {
-    public class TextToolBar : Gtk.Grid {
+    public class TableProperty : Gtk.Grid {
 
         private TextEditor editor;
         public FontButton font_button;
-        public ColorButton font_color_button;
         public ToggleButton bold_button;
         public ToggleButton italic_button;
         public ToggleButton underline_button;
         public ToggleButton strikethrough_button;
-        public Button indent_more_button;
-        public Button indent_less_button;
         public ModeButton align_button;
 
-        public TextToolBar (TextEditor editor) {
+        public TableProperty (TextEditor editor) {
             this.editor = editor;
-            editor.cursor_moved.connect (cursor_moved);
 
-            setup_ui ();
-        }
+            var table_properties_label = new Gtk.Label (_("Table Properties"));
+            table_properties_label.get_style_context ().add_class ("h3");
+            var table_properties_item = new Gtk.ToolItem ();
+            table_properties_item.add (table_properties_label);
 
-        public void setup_ui () {
-            var text_properties_label = new Gtk.Label (_("Text Properties"));
-            text_properties_label.get_style_context ().add_class ("h3");
-            var text_properties_item = new Gtk.ToolItem ();
-            text_properties_item.add (text_properties_label);
-
-            var paragraph_combobox = new Gtk.ComboBoxText ();
-            paragraph_combobox.append ("Paragraph", (_("Paragraph")));
-            paragraph_combobox.append ("Title", (_("Title")));
-            paragraph_combobox.append ("Subtitle", (_("Subtitle")));
-            paragraph_combobox.append ("Two-Column", (_("Two-Column")));
-            paragraph_combobox.set_active_id ("Paragraph");
-            var paragraph_item = new ToolItem ();
-            paragraph_item.add (paragraph_combobox);
-            paragraph_item.tooltip_text = _("Style");
-
-            // TODO: Update the font button
-            var font_item = new ToolItem ();
+            var font_item = new Gtk.ToolItem ();
             font_button = new Gtk.FontButton ();
             font_button.tooltip_text = _("Font");
             font_button.use_font = true;
             font_button.use_size = false;
             font_item.add (font_button);
 
-            // TODO: Update the color button
-            font_color_button = new Gtk.ColorButton.with_rgba ({0, 0, 0, 225});
+            var font_color_button = new Gtk.ColorButton.with_rgba ({0, 0, 0, 225});
             font_color_button.tooltip_text = _("Font Color");
             var font_color_item = new Gtk.ToolItem ();
             font_color_item.add (font_color_button);
 
-            var styles_item = new ToolItem ();
+            var styles_item = new Gtk.ToolItem ();
             var styles_buttons = new ButtonGroup ();
             bold_button = new Gtk.ToggleButton ();
             bold_button.add (new Image.from_icon_name ("format-text-bold-symbolic", Gtk.IconSize.BUTTON));
@@ -110,29 +90,23 @@ namespace Writer.Widgets {
             align_button.append (text_fill);
             align_item.add (align_button);
 
-            var indent_button = new ButtonGroup ();
-            var indent_more_button = new Button.from_icon_name ("format-indent-more-symbolic", Gtk.IconSize.BUTTON);
-            indent_more_button.tooltip_text = _("More indent");
-            var indent_less_button = new Button.from_icon_name ("format-indent-less-symbolic", Gtk.IconSize.BUTTON);
-            indent_less_button.tooltip_text = _("Less indent");
-            indent_button.add (indent_more_button);
-            indent_button.add (indent_less_button);
-            var indent_item = new Gtk.ToolItem ();
-            indent_item.add (indent_button);
+            var delete_table_button = new Gtk.Button.with_label (_("Delete this Table"));
+            delete_table_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            delete_table_button.tooltip_text = _("Delete the selected table");
+            var delete_table_item = new Gtk.ToolItem ();
+            delete_table_item.add (delete_table_button);
 
             // Add Widgets
             margin = 12;
             column_spacing = 6;
             row_spacing = 6;
-            attach (text_properties_item, 0, 0, 1, 1);
-            attach (paragraph_item, 0, 1, 1, 1);
-            attach (font_item, 0, 2, 1, 1);
-            attach (font_color_item, 1, 2, 1, 1);
-            attach (styles_item, 0, 3, 1, 1);
-            attach (align_item, 0, 4, 1, 1);
-            attach (indent_item, 1, 4, 1, 1);
+            attach (table_properties_item, 0, 0, 1, 1);
+            attach (font_item, 0, 1, 2, 1);
+            attach (font_color_item, 3, 1, 1, 1);
+            attach (styles_item, 0, 2, 1, 1);
+            attach (align_item, 0, 3, 1, 1);
+            attach (delete_table_item, 0, 4, 1, 1);
 
-            // Connect signals
             align_button.mode_changed.connect (() => {
                 change_align (align_button.selected);
             });
@@ -169,11 +143,6 @@ namespace Writer.Widgets {
 
         }
 
-
-        /*
-         * Signal callbacks
-         */
-
         public void change_align (int index) {
             switch (index) {
                 case 1:
@@ -185,15 +154,6 @@ namespace Writer.Widgets {
                 default:
                     editor.set_justification ("left"); break;
             }
-        }
-
-        public void cursor_moved () {
-            bold_button.active = editor.has_style ("bold");
-            italic_button.active = editor.has_style ("italic");
-            underline_button.active = editor.has_style ("underline");
-            strikethrough_button.active = editor.has_style ("strikethrough");
-
-            align_button.selected = editor.get_justification_as_int ();
         }
 
     }

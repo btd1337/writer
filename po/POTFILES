@@ -6,11 +6,11 @@ src/Utils/TextRange.vala
 src/Utils/ZeitgeistLogger.vala
 src/Widgets/ButtonGroup.vala
 src/Widgets/EditorView.vala
-src/Widgets/ImageToolBar.vala
+src/Widgets/ImageProperty.vala
 src/Widgets/TableChooser.vala
-src/Widgets/TableToolBar.vala
+src/Widgets/TableProperty.vala
 src/Widgets/TextBoxProperty.vala
-src/Widgets/TextToolBar.vala
+src/Widgets/TextProperty.vala
 src/Widgets/TitleBar.vala
 src/Widgets/ToolBar.vala
 src/Widgets/WelcomeView.vala
