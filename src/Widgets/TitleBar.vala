@@ -93,6 +93,9 @@ namespace Writer.Widgets {
             zoom_size_grid.add (zoom_default_button);
             zoom_size_grid.add (zoom_in_button);
 
+            // Create a separator
+            var menu_separator = new Gtk.Separator (Gtk.Orientation.HORIZONTAL);
+
             // Create preferences button
             var preferences_menuitem = new Gtk.ModelButton ();
             preferences_menuitem.text = _("Preferences");
@@ -103,7 +106,8 @@ namespace Writer.Widgets {
             menu_grid.orientation = Gtk.Orientation.VERTICAL;
             menu_grid.width_request = 200;
             menu_grid.attach (zoom_size_grid, 0, 0, 3, 1);
-            menu_grid.attach (preferences_menuitem, 0, 1, 3, 1);
+            menu_grid.attach (menu_separator, 0, 1, 3, 1);
+            menu_grid.attach (preferences_menuitem, 0, 2, 3, 1);
             menu_grid.show_all ();
 
             // Set popover
