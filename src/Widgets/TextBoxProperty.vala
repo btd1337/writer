@@ -97,6 +97,12 @@ namespace Writer.Widgets {
             align_button.append (text_fill);
             align_item.add (align_button);
 
+            var delete_textbox_button = new Gtk.Button.with_label (_("Delete this TexBox"));
+            delete_textbox_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
+            delete_textbox_button.tooltip_text = _("Delete the selected textbox");
+            var delete_textbox_item = new Gtk.ToolItem ();
+            delete_textbox_item.add (delete_textbox_button);
+
             // Add Widgets
             margin = 12;
             column_spacing = 6;
@@ -106,6 +112,7 @@ namespace Writer.Widgets {
             attach (font_color_item, 1, 1, 1, 1);
             attach (styles_item, 0, 2, 1, 1);
             attach (align_item, 0, 3, 1, 1);
+            attach (delete_textbox_item, 1, 4, 1, 1);
 
             // Connect signals
             align_button.mode_changed.connect (() => {
