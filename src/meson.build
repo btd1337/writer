@@ -11,6 +11,7 @@ executable(
         'Widgets/ImageToolBar.vala',
         'Widgets/TableChooser.vala',
         'Widgets/TableToolBar.vala',
+        'Widgets/TextBoxProperty.vala',
         'Widgets/TextToolBar.vala',
         'Widgets/TitleBar.vala',
         #'Widgets/ToolBar.vala',

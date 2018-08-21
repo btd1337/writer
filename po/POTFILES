@@ -9,6 +9,7 @@ src/Widgets/EditorView.vala
 src/Widgets/ImageToolBar.vala
 src/Widgets/TableChooser.vala
 src/Widgets/TableToolBar.vala
+src/Widgets/TextBoxProperty.vala
 src/Widgets/TextToolBar.vala
 src/Widgets/TitleBar.vala
 src/Widgets/ToolBar.vala
