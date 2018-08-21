@@ -41,8 +41,7 @@ namespace Writer.Widgets {
         public void setup_ui () {
             var textbox_properties_label = new Gtk.Label (_("TextBox Properties"));
             textbox_properties_label.get_style_context ().add_class ("h3");
-            var textbox_properties_item = new Gtk.ToolItem ();
-            textbox_properties_item.add (textbox_properties_label);
+            textbox_properties_label.xalign = 0;
 
             // TODO: Update the font button
             var font_item = new ToolItem ();
@@ -102,7 +101,7 @@ namespace Writer.Widgets {
             margin = 12;
             column_spacing = 6;
             row_spacing = 6;
-            attach (textbox_properties_item, 0, 0, 1, 1);
+            attach (textbox_properties_label, 0, 0, 1, 1);
             attach (font_item, 0, 1, 1, 1);
             attach (font_color_item, 1, 1, 1, 1);
             attach (styles_item, 0, 2, 1, 1);

@@ -35,8 +35,7 @@ namespace Writer.Widgets {
 
             var table_properties_label = new Gtk.Label (_("Table Properties"));
             table_properties_label.get_style_context ().add_class ("h3");
-            var table_properties_item = new Gtk.ToolItem ();
-            table_properties_item.add (table_properties_label);
+            table_properties_label.xalign = 0;
 
             var font_item = new Gtk.ToolItem ();
             font_button = new Gtk.FontButton ();
@@ -100,7 +99,7 @@ namespace Writer.Widgets {
             margin = 12;
             column_spacing = 6;
             row_spacing = 6;
-            attach (table_properties_item, 0, 0, 1, 1);
+            attach (table_properties_label, 0, 0, 1, 1);
             attach (font_item, 0, 1, 2, 1);
             attach (font_color_item, 3, 1, 1, 1);
             attach (styles_item, 0, 2, 1, 1);

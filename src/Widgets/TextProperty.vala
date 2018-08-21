@@ -43,8 +43,7 @@ namespace Writer.Widgets {
         public void setup_ui () {
             var text_properties_label = new Gtk.Label (_("Text Properties"));
             text_properties_label.get_style_context ().add_class ("h3");
-            var text_properties_item = new Gtk.ToolItem ();
-            text_properties_item.add (text_properties_label);
+            text_properties_label.xalign = 0;
 
             var paragraph_combobox = new Gtk.ComboBoxText ();
             paragraph_combobox.append ("Paragraph", (_("Paragraph")));
@@ -124,7 +123,7 @@ namespace Writer.Widgets {
             margin = 12;
             column_spacing = 6;
             row_spacing = 6;
-            attach (text_properties_item, 0, 0, 1, 1);
+            attach (text_properties_label, 0, 0, 1, 1);
             attach (paragraph_item, 0, 1, 1, 1);
             attach (font_item, 0, 2, 1, 1);
             attach (font_color_item, 1, 2, 1, 1);

@@ -29,6 +29,7 @@ namespace Writer.Widgets {
             this.editor = editor;
             var image_properties_label = new Gtk.Label (_("Image Properties"));
             image_properties_label.get_style_context ().add_class ("h3");
+            image_properties_label.xalign = 0;
 
             var wrap_combobox = new Gtk.ComboBoxText ();
             wrap_combobox.append ("In line of text", (_("In line of text")));

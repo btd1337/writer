@@ -27,6 +27,7 @@ namespace Writer.Widgets {
         public ShapeProperty () {
             var shape_properties_label = new Gtk.Label (_("Shape Properties"));
             shape_properties_label.get_style_context ().add_class ("h3");
+            shape_properties_label.xalign = 0;
 
             // Create labels/colorbuttons for fill/line color
             var fill_color_label = new Gtk.Label (_("Fill Color: "));
