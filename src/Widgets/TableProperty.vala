@@ -100,8 +100,8 @@ namespace Writer.Widgets {
             column_spacing = 6;
             row_spacing = 6;
             attach (table_properties_label, 0, 0, 1, 1);
-            attach (font_item, 0, 1, 2, 1);
-            attach (font_color_item, 3, 1, 1, 1);
+            attach (font_item, 0, 1, 1, 1);
+            attach (font_color_item, 1, 1, 1, 1);
             attach (styles_item, 0, 2, 1, 1);
             attach (align_item, 0, 3, 1, 1);
             attach (delete_table_item, 1, 4, 1, 1);
