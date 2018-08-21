@@ -43,9 +43,9 @@ namespace Writer.Widgets {
             main_label.get_style_context ().add_class ("h3");
             main_label.xalign = 0;
             var cols_label = new Gtk.Label (_("Columns:"));
-            cols_label.xalign = 0;
+            cols_label.xalign = 1;
             var rows_label = new Gtk.Label (_("Rows:"));
-            rows_label.xalign = 0;
+            rows_label.xalign = 1;
 
             // Create insert button
             var insert_button = new Gtk.Button.with_label (_("Insert Table"));
