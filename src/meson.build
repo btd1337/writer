@@ -13,7 +13,7 @@ executable(
         'Widgets/TableToolBar.vala',
         'Widgets/TextToolBar.vala',
         'Widgets/TitleBar.vala',
-        'Widgets/ToolBar.vala',
+        #'Widgets/ToolBar.vala',
         'Widgets/WelcomeView.vala',
         'Application.vala',
         'MainWindow.vala',
