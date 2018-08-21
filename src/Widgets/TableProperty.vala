@@ -104,7 +104,7 @@ namespace Writer.Widgets {
             attach (font_color_item, 3, 1, 1, 1);
             attach (styles_item, 0, 2, 1, 1);
             attach (align_item, 0, 3, 1, 1);
-            attach (delete_table_item, 0, 4, 1, 1);
+            attach (delete_table_item, 1, 4, 1, 1);
 
             align_button.mode_changed.connect (() => {
                 change_align (align_button.selected);
