@@ -7,6 +7,7 @@ src/Utils/ZeitgeistLogger.vala
 src/Widgets/ButtonGroup.vala
 src/Widgets/EditorView.vala
 src/Widgets/ImageProperty.vala
+src/Widgets/InsertChooser.vala
 src/Widgets/ShapeChooser.vala
 src/Widgets/ShapeProperty.vala
 src/Widgets/TableChooser.vala

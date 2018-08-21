@@ -9,6 +9,7 @@ executable(
         'Widgets/ButtonGroup.vala',
         'Widgets/EditorView.vala',
         'Widgets/ImageProperty.vala',
+        'Widgets/InsertChooser.vala',
         'Widgets/ShapeChooser.vala',
         'Widgets/ShapeProperty.vala',
         'Widgets/TableChooser.vala',
