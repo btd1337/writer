@@ -34,21 +34,25 @@ namespace Writer.Widgets {
         }
 
         private void setup_ui () {
-            // Make some content
+            // Create spin buttons for columns/rows number
             var cols_spin = new Gtk.SpinButton.with_range (1, 10, 1);
             var rows_spin = new Gtk.SpinButton.with_range (1, 10, 1);
 
-            var insert_button = new Gtk.Button.with_label (_("Insert Table"));
-
-            // Make some labels
+            // Create some labels
             var main_label = new Gtk.Label (_("Table"));
+            main_label.get_style_context ().add_class ("h3");
             main_label.xalign = 0;
             var cols_label = new Gtk.Label (_("Columns:"));
             cols_label.xalign = 0;
             var rows_label = new Gtk.Label (_("Rows:"));
             rows_label.xalign = 0;
 
+            // Create insert button
+            var insert_button = new Gtk.Button.with_label (_("Insert Table"));
+            insert_button.margin_top = 6;
+
             // Package...
+            margin = 12;
             attach (main_label, 0, 0, 2, 1);
             attach (cols_label, 0, 1, 1, 1);
             attach (cols_spin, 1, 1, 1, 1);
