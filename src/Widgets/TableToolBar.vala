@@ -30,7 +30,9 @@ namespace Writer.Widgets {
         public ToggleButton strikethrough_button;
         public ModeButton align_button;
 
-        public TableToolBar () {
+        public TableToolBar (TextEditor editor) {
+            this.editor = editor;
+
             var table_properties_label = new Gtk.Label (_("Table Properties"));
             table_properties_label.get_style_context ().add_class ("h3");
             var table_properties_item = new Gtk.ToolItem ();
