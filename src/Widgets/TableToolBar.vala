@@ -104,7 +104,7 @@ namespace Writer.Widgets {
             delete_table_item.add (delete_table_button);
 
 
-            //Set border_width on ToolItems
+            // Set border_width on ToolItems
             table_properties_item.border_width = 5;
             font_item.border_width = 5;
             font_color_item.border_width = 5;

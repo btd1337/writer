@@ -92,7 +92,7 @@ namespace Writer {
             welcome_view = new Widgets.WelcomeView (app);
 
 
-            //Attach headerbar
+            // Attach headerbar
             this.set_titlebar (title_bar);
 
             // Add main box to window

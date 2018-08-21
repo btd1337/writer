@@ -66,7 +66,7 @@ namespace Writer.Widgets {
             delete_image_item.add (delete_image_button);
 
 
-            //Set border_width on ToolItems
+            // Set border_width on ToolItems
             wrap_item.border_width = 5;
             lock_aspect_item.border_width = 5;
             align_item.border_width = 5;

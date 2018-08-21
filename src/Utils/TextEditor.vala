@@ -211,7 +211,7 @@ namespace Writer {
         }
 
         public void insert_line_at_iter (TextIter iter) {
-            //TODO
+            // TODO
             // Cursor does not move to next line
             // Only happens when inserting at the end of the buffer
             // Bug reported in GTK+

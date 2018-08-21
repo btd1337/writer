@@ -36,13 +36,13 @@ namespace Writer.Widgets {
 
         public TitleBar (WriterApp app) {
 
-            //Basics
+            // Basics
             this.app = app;
             this.title = "Writer";
             this.set_show_close_button (true);
             this.get_style_context ().add_class ("titlebar");
 
-            //Make buttons
+            // Make buttons
             open_button = new Gtk.Button.from_icon_name ("document-open", Gtk.IconSize.LARGE_TOOLBAR);
             open_button.tooltip_text = _("Open a file");
             save_button = new Gtk.Button.from_icon_name ("document-save", Gtk.IconSize.LARGE_TOOLBAR);
@@ -52,14 +52,14 @@ namespace Writer.Widgets {
             revert_button = new Gtk.Button.from_icon_name ("document-revert", Gtk.IconSize.LARGE_TOOLBAR);
             revert_button.tooltip_text = _("Restore this file");
 
-            //Search Field
+            // Search Field
             search_field = new Gtk.SearchEntry ();
             search_field.placeholder_text = _("Find");
             search_field.search_changed.connect (() => {
                 app.search (search_field.text);
             });
 
-            //Export Menu
+            // Export Menu
             export_item = new Gtk.MenuItem.with_label (_("Export to PDF…"));
             print_item = new Gtk.MenuItem.with_label (_("Print…"));
             var export_menu = new Gtk.Menu ();
@@ -71,7 +71,7 @@ namespace Writer.Widgets {
             export_button.tooltip_text = _("Print or export this file");
             export_menu.show_all ();
 
-            //AppMenu
+            // AppMenu
             var preferences_menuitem = new Gtk.ModelButton ();
             preferences_menuitem.text = _("Preferences");
 
@@ -90,7 +90,7 @@ namespace Writer.Widgets {
             app_menu.tooltip_text = _("Menu");
             app_menu.popover = menu;
 
-            //Add buttons to TitleBar
+            // Add buttons to TitleBar
             this.pack_start (open_button);
             this.pack_start (save_button);
             this.pack_start (save_as_button);
@@ -99,7 +99,7 @@ namespace Writer.Widgets {
             this.pack_end (export_button);
             this.pack_end (search_field);
 
-            //Connect signals
+            // Connect signals
             open_button.clicked.connect (app.open_file_dialog);
             save_button.clicked.connect (app.save);
             save_as_button.clicked.connect (app.save_as);

@@ -33,7 +33,7 @@ namespace Writer {
             Logger.DisplayLevel = LogLevel.DEBUG;
         }
 
-        //the application started
+        // the application started
         public override void activate () {
             if (get_windows () == null) {
                 editor = new TextEditor ();
@@ -45,7 +45,7 @@ namespace Writer {
             }
         }
 
-        //the application was requested to open some files
+        // the application was requested to open some files
         public void new_file () {
             window.show_editor ();
         }
@@ -62,10 +62,10 @@ namespace Writer {
             if (filech.run () == Gtk.ResponseType.ACCEPT) {
                 var uri = filech.get_uris ().nth_data (0);
 
-                //Update last visited path
+                // Update last visited path
                 Utils.last_path = Path.get_dirname (uri);
 
-                //Open the file
+                // Open the file
                 var doc = new Utils.Document (uri);
                 open_file (doc);
             }

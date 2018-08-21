@@ -139,7 +139,7 @@ namespace Writer.Widgets {
             insert_item.add (insert_button);
 
 
-            //Set border_width on ToolItems
+            // Set border_width on ToolItems
             paragraph_item.border_width = 5;
             font_item.border_width = 5;
             font_color_item.border_width = 5;
@@ -222,7 +222,7 @@ namespace Writer.Widgets {
 
             align_button.selected = editor.get_justification_as_int ();
 
-            //TODO
+            // TODO
             // Update font and color buttons
         }
 
