@@ -26,20 +26,12 @@ namespace Writer.Widgets {
         public signal void selected (int columns, int rows);
 
         public TableChooser () {
-            column_spacing = 6;
-            row_spacing = 4;
-
-
-            setup_ui ();
-        }
-
-        private void setup_ui () {
             // Create spin buttons for columns/rows number
             var cols_spin = new Gtk.SpinButton.with_range (1, 10, 1);
             var rows_spin = new Gtk.SpinButton.with_range (1, 10, 1);
 
             // Create some labels
-            var main_label = new Gtk.Label (_("Table"));
+            var main_label = new Gtk.Label (_("Insert Table"));
             main_label.get_style_context ().add_class ("h3");
             main_label.xalign = 0;
             var cols_label = new Gtk.Label (_("Columns:"));
@@ -53,6 +45,8 @@ namespace Writer.Widgets {
 
             // Package...
             margin = 12;
+            column_spacing = 6;
+            row_spacing = 4;
             attach (main_label, 0, 0, 2, 1);
             attach (cols_label, 0, 1, 1, 1);
             attach (cols_spin, 1, 1, 1, 1);

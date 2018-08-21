@@ -21,16 +21,8 @@ namespace Writer.Widgets {
     public class ShapeChooser : Gtk.Grid {
 
         public ShapeChooser () {
-            column_spacing = 6;
-            row_spacing = 4;
-
-
-            setup_ui ();
-        }
-
-        private void setup_ui () {
             // Create type label
-            var type_label = new Gtk.Label (_("Type"));
+            var type_label = new Gtk.Label (_("Insert Shape"));
             type_label.get_style_context ().add_class ("h3");
             type_label.xalign = 0;
 
@@ -57,6 +49,8 @@ namespace Writer.Widgets {
 
             // Package...
             margin = 12;
+            column_spacing = 6;
+            row_spacing = 4;
             attach (type_label, 0, 0, 1, 1);
             attach (shape_buttons, 0, 1, 4, 1);
 
