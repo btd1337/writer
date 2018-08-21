@@ -20,15 +20,15 @@ using Gdk;
 using Granite.Widgets;
 
 namespace Writer.Widgets {
-    public class ImageToolBar : Gtk.Toolbar {
+    public class ImageToolBar : Gtk.Grid {
 
         private TextEditor editor;
         public ModeButton align_button;
 
         public ImageToolBar (TextEditor editor) {
-            this.get_style_context ().add_class ("toolbar");
-
             this.editor = editor;
+            var image_properties_label = new Gtk.Label (_("Image Properties"));
+            image_properties_label.get_style_context ().add_class ("h3");
 
             var wrap_combobox = new Gtk.ComboBoxText ();
             wrap_combobox.append ("In line of text", (_("In line of text")));
@@ -54,32 +54,21 @@ namespace Writer.Widgets {
             align_button.append (align_right);
             align_item.add (align_button);
 
-            var edit_image_button = new Gtk.Button.with_label (_("Crop"));
-            edit_image_button.tooltip_text = _("Crop the selected image");
-            var edit_image_item = new Gtk.ToolItem ();
-            edit_image_item.add (edit_image_button);
-
             var delete_image_button = new Gtk.Button.with_label (_("Remove this Image"));
             delete_image_button.get_style_context ().add_class (Gtk.STYLE_CLASS_DESTRUCTIVE_ACTION);
             delete_image_button.tooltip_text = _("Remove the selected image");
             var delete_image_item = new Gtk.ToolItem ();
             delete_image_item.add (delete_image_button);
 
-
-            // Set border_width on ToolItems
-            wrap_item.border_width = 5;
-            lock_aspect_item.border_width = 5;
-            align_item.border_width = 5;
-            edit_image_item.border_width = 5;
-            align_item.border_width = 5;
-            delete_image_item.border_width = 5;
-
             // Add Widgets            
-            this.add (wrap_item);
-            this.add (lock_aspect_item);
-            this.add (align_item);
-            this.add (edit_image_item);
-            this.add (delete_image_item);
+            margin = 12;
+            column_spacing = 6;
+            row_spacing = 6;
+            attach (image_properties_label, 0, 0, 1, 1);
+            attach (wrap_item, 0, 1, 1, 1);
+            attach (lock_aspect_item, 1, 1, 1, 1);
+            attach (align_item, 0, 3, 1, 1);
+            attach (delete_image_item, 1, 4, 1, 1);
 
             align_button.mode_changed.connect (() => {
                 change_align (align_button.selected);
