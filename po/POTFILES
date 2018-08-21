@@ -13,5 +13,5 @@ src/Widgets/TextToolBar.vala
 src/Widgets/TitleBar.vala
 src/Widgets/ToolBar.vala
 src/Widgets/WelcomeView.vala
+src/Application.vala
 src/MainWindow.vala
-src/Writer.vala

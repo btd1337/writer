@@ -15,8 +15,8 @@ executable(
         'Widgets/TitleBar.vala',
         'Widgets/ToolBar.vala',
         'Widgets/WelcomeView.vala',
+        'Application.vala',
         'MainWindow.vala',
-        'Writer.vala',
     dependencies: [
         dependency('gee-0.8'),
         dependency('glib-2.0'),
